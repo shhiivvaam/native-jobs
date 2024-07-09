@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-const http = require('https');
+// const http = require('https');
 // import { RAPID_API_KEY } from '@env';
 
 // const rapidApiKey = RAPID_API_KEY;
@@ -11,25 +11,26 @@ const useFetch = (endpoint, query) => {
     const [error, setError] = useState(null);
 
     const options = {
+        // method: 'GET',
+        // hostname: 'jsearch.p.rapidapi.com',
+        // port: null,
+        // path: `/${endpoint}`,
+        // headers: {
+        //     // 'x-rapidapi-key': rapidApiKey,
+        //     'x-rapidapi-key': "ebfb9e03b5mshf8150bb796c200ep13cf13jsnce868bff9f4b",
+        //     'x-rapidapi-host': 'jsearch.p.rapidapi.com'
+        // },
+        // params: { ...query },
+
+        // OR
         method: 'GET',
-        hostname: 'jsearch.p.rapidapi.com',
-        port: null,
-        path: `/${endpoint}`,
+        url: `https://jsearch.p.rapidapi.com/${endpoint}`,
         headers: {
             // 'x-rapidapi-key': rapidApiKey,
             'x-rapidapi-key': "ebfb9e03b5mshf8150bb796c200ep13cf13jsnce868bff9f4b",
             'x-rapidapi-host': 'jsearch.p.rapidapi.com'
         },
         params: { ...query },
-
-        // OR
-        // method: 'GET',
-        // path: `https://jsearch.p.rapidapi.com/${endpoint}`,
-        // headers: {
-        //     'x-rapidapi-key': rapidApiKey,
-        //     'x-rapidapi-host': 'jsearch.p.rapidapi.com'
-        // },
-        // params: { ...query },
     };
 
     const fetchData = async () => {

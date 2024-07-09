@@ -17,7 +17,7 @@ const Popularjobs = () => {
     num_pages: 1,
   });
 
-  console.log(data)
+  // console.log(data)
 
   return (
     <View style={styles.container}>
@@ -37,11 +37,11 @@ const Popularjobs = () => {
             <Text>Popularjobs</Text>
           ) : (
             <FlatList
-              data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+              data={data}
               renderItem={({ item }) => (
                 <PopularJobCard
                   item={item}
-                  key={(item, index) => index}
+                // key={(item, index) => index}
                 />
               )}
               keyExtractor={item => item?.job_id} // check this
