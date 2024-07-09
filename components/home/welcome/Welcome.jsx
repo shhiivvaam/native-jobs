@@ -37,6 +37,7 @@ const Welcome = () => {
       </View>
 
       <View style={styles.tabsContainer}>
+        {/* // TODO:  Handle the Key required -> warning */}
         <FlatList
           data={jobTypes}
           renderItem={({ item }) => (
@@ -50,7 +51,7 @@ const Welcome = () => {
               <Text style={styles.tabText(activeJobType, item)}>{item}</Text>
             </TouchableOpacity>
           )}
-          keyExtractor={item => item}
+          keyExtractor={(item, index) => index}          // keyExtractor={item => item}
           contentContainerStyle={{ columnGap: SIZES.small }}
           horizontal
         />
