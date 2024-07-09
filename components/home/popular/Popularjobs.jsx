@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, ActivityIndicator, FlatList } from 'react-native'
 
 import { useRouter } from 'expo-router';
@@ -16,6 +16,12 @@ const Popularjobs = () => {
     query: 'React Developer',
     num_pages: 1,
   });
+
+  const [selectedJob, setSelectedJob] = useState({});
+
+  const handleCardPress = (item) => {
+    // TOOD: complete this
+  }
 
   // console.log(data)
 
@@ -41,6 +47,8 @@ const Popularjobs = () => {
               renderItem={({ item }) => (
                 <PopularJobCard
                   item={item}
+                  selectedJob={selectedJob}
+                  handleCardPress={handleCardPress}
                 // key={(item, index) => index}
                 />
               )}
